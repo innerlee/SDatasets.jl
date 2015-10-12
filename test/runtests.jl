@@ -8,3 +8,5 @@ d = data_ball()
 d = data_ball(10)
 
 @test size(d) == (10, 2)
+
+@test sum(sum(d.*d,2).>1) == 0 # test radius

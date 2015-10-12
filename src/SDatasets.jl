@@ -16,10 +16,10 @@ function data_ball(N=1, center=[0 0], radius=[1];
   data = Array(Float64, N, width)
   for i = 1:N
     pt = Array(Float64, 1, dim)
+    r = radius[(i - 1) % n_radius + 1]
     while true
-      r = radius[(i - 1) % n_radius + 1]
       pt[:] = (rand(dim) - .5) * (r * 2)
-      if (pt'*pt)[1] <= r * r
+      if (pt*pt')[1] <= r * r
         break
       end
     end
